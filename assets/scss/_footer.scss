@@ -1,0 +1,17 @@
+@use "abstract/mixin";
+@use "abstract/variables" as var;
+
+footer {
+    @include mixin.flex;
+    height: 10vh;
+    background-color: var.$secondaryColor;
+
+    .footer_logo_wrapper {
+        width: 10%;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

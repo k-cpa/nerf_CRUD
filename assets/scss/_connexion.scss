@@ -1,0 +1,71 @@
+@use "abstract/mixin";
+@use "abstract/variables" as var;
+
+#connect {
+    @include mixin.flex ($direction: column);
+    width: 100vw;
+    height: 90vh;
+
+    h3 {
+        font-family: var.$titleFont;
+        font-size: 2.5em;
+        letter-spacing: 2px;
+        margin-bottom: 3rem;
+    
+        span {
+            color: var.$principalColor;
+            text-shadow: -2px -2px 0 var.$principalTextColor,
+            2px -2px 0 var.$principalTextColor,
+            -2px 2px 0 var.$principalTextColor,
+            2px 2px 0 var.$principalTextColor
+        }
+    }
+
+    .connect_container {
+        @include mixin.flex;
+        background-color: var.$principalColor;
+        padding: 20px;
+        border-radius: 15px;
+        width: 30%;
+        height: 45%;
+    }
+    form {
+        @include mixin.flex ($direction: column);
+        width: 50%;
+        height: 90%;
+        gap: 1.5rem;
+
+        input {
+            all: unset;
+            background-color: var.$secondaryColor;
+            border-radius: 5px;
+            padding-left: 5px;
+            width: 75%;
+            height: 6%;
+            border: 1px solid transparent;
+            transition: .3s ease;
+
+            &:focus {
+                border: 1px solid black;
+            }
+
+            &::placeholder {
+                color: var.$principalTextColor;
+            }
+        }
+
+        button {
+            all: unset;
+            margin-top: 2rem;
+            padding: 5px 25px;
+            border-radius: 20px;
+            border: 1px solid var.$secondaryColor;
+            transition: .3s ease;
+            cursor: pointer;
+
+            &:hover {
+                background-color: var.$secondaryColor;
+            }
+        }
+    }
+}

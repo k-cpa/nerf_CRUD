@@ -1,0 +1,44 @@
+@use "abstract/mixin";
+@use "abstract/variables" as var;
+
+header {
+    @include mixin.flex;
+    background-color: var.$principalColor;
+    width: 100%;
+    height: 5vh;
+    // position: fixed;
+
+
+    nav {
+        @include mixin.flex ($justify: space-between);
+        width: 100%;
+        height: 100%;
+        padding-left: 4%;
+        padding-right: 4%;
+
+        .logo_wrapper {
+            width: 5%;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+
+        ul {
+            @include mixin.flex;
+            gap: 1rem;
+
+            a {
+                color: var.$principalTextColor;
+                cursor: pointer;
+                transition: .3s ease;
+    
+                &:hover {
+                    color: var.$secondaryColor;
+                }
+            }
+        }
+
+    }
+}
